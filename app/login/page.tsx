@@ -1,4 +1,5 @@
-import { auth, signIn, signOut } from '@/auth';
+/* eslint-disable @next/next/no-img-element */
+import { auth, signIn, signOut } from '@/auth'
 
 function SignIn() {
   return (
@@ -36,7 +37,7 @@ function SignOut({ session }) {
 
 export default async function GitHubLogin() {
   const session = await auth()
-  const email = session?.user?.email;
+  const email = session?.user?.email
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
       <section>
