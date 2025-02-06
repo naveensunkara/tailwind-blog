@@ -12,7 +12,7 @@ const Header = async () => {
   if (siteMetadata.stickyNav) {
     headerClass += ' sticky top-0 z-50'
   }
-  let session = await auth();
+  const session = await auth()
   return (
     <header className={headerClass}>
       <Link href="/" aria-label={siteMetadata.headerTitle}>
@@ -37,7 +37,7 @@ const Header = async () => {
               <Link
                 key={link.title}
                 href={link.href}
-                className={`m-1 block font-medium text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400 ${(link.title == 'Logout' && !session) || (link.title == 'Login' && session) ? 'hidden': ''}`}
+                className={`m-1 block font-medium text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400 ${(link.title == 'Logout' && !session) || (link.title == 'Login' && session) ? 'hidden' : ''}`}
               >
                 {link.title}
               </Link>
